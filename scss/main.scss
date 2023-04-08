@@ -1,0 +1,174 @@
+@import "variable";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  overflow-x: hidden;
+}
+.container {
+  display: grid;
+  grid-template-rows:
+    80vh min-content 40vw
+    repeat(3, min-content);
+  grid-template-columns:
+    5rem minmax(5rem, 1fr)
+    repeat(6, minmax(min-content, 20rem))
+    minmax(5rem, 1fr);
+  grid-template-areas:
+    "nav header header header header header realtors realtors realtors"
+    "nav . services services services services services services ."
+    "nav goals goals goals goals story story story story"
+    "nav . homes homes homes homes homes homes ."
+    "nav gallery gallery gallery gallery gallery gallery gallery gallery"
+    "nav footer footer footer footer footer footer footer footer";
+  .nav {
+    grid-area: nav;
+    width: 100%;
+    background-color: $color-primary;
+    padding:1.4rem 0.5rem;
+    .mr{
+        background-color: black;
+        margin: 1rem 0;
+    }
+    .nav-line{
+        height: 0.2rem;
+        background-color: $color-white;
+        
+    }
+  }
+  .header {
+    grid-area: header;
+    background: linear-gradient($color-head),
+      url("../../assets/img/gal-2.jpeg") center center/cover;
+    background-color: 100% 100%, cover;
+    color: #fff;
+    padding: 3.5rem;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-rows: minmax(5rem, 1fr) 3rem minmax(7rem, min-content) minmax(
+        2rem,
+        1fr
+      ) 3rem;
+    .logo {
+      height: 3rem;
+      justify-self: center;
+    }
+    h4 {
+      font-size: 1.6rem;
+      font-family: $font-nunito;
+    }
+    h1 {
+      font-size: 3.2rem;
+      font-family: $font-josefin;
+    }
+    a {
+      display: block;
+      padding: 1rem;
+      height: 3.9rem;
+      font-family: $font-nunito;
+      font-size: 1.5rem;
+      width: 40%;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background-color: $color-primary;
+    }
+    h5 {
+      font-family: $font-josefin;
+      font-size: 1.5rem;
+      display: grid;
+      grid-gap: 1.5rem;
+      grid-template-columns: 1fr max-content 1fr;
+      align-items: center;
+      padding-bottom: 0 !important;
+      &::after,
+      &::before {
+        content: "";
+        height: 1px;
+        width: 100%;
+        display: block;
+        background: white;
+      }
+    }
+
+    .brandlogos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
+      img {
+        width: 80%;
+        height: 2.5rem;
+      }
+    }
+  }
+//   end Header
+  .realtors {
+    grid-area: realtors;
+    color: $color-white;
+    background-color:$color-black;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-row-gap:2rem;   
+    h1{
+        text-align: center;
+        font-size: 2rem;
+    }
+    .real-fig{
+       display: grid;
+       align-items: center;
+       grid-column-gap:2rem ;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    img{
+            height: 6rem;
+            width: 6rem;
+            border-radius: 100%;
+        }
+    
+}
+// // end realtors
+// .services {
+//     gap: 10px;
+//     grid-area: services;
+//     background-color: limegreen;
+//     color: $color-white;
+//     margin: 10rem 0;
+//     .service{
+//         display: grid;
+//         grid-template-columns: repeat(3, 1fr);
+//         grid-template-columns: repeat(2, 1fr);
+
+//     }
+    
+//     .service-box{
+        
+//     }   
+// }
+//   .goals {
+//     grid-area: goals;
+//     background-color: blue;
+//   }
+//   .story {
+//     grid-area: story;
+//     background-color: darkslateblue;
+//   }
+//   .homes {
+//     grid-area: homes;
+//     background-color: lightcoral;
+//   }
+//   .gallery {
+//     grid-area: gallery;
+//     background-color: darkgoldenrod;
+//   }
+//   .footer {
+//     grid-area: footer;
+//     background-color: lightseagreen;
+//   }
+}
